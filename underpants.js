@@ -4,26 +4,6 @@
 'use strict';
 
 var _ = {
-    identity: 
-    typeOf:
-    first:
-    last:
-    indexOf:
-    contains:
-    each:
-    unique:
-    filter:
-    reject:
-    partition:
-    map:
-    pluck:
-    every:
-    some:
-    reduce:
-    extend:
-};
-
-
 /**
 * START OF OUR LIBRARY!
 * Implement each function below its instructions
@@ -38,7 +18,11 @@ var _ = {
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-
+//have identity take any value and return it
+identity: function(value) {
+    //return the value
+    return value;
+},
 
 /** _.typeOf
 * Arguments:
@@ -59,7 +43,25 @@ var _ = {
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-
+//have typeof take any value and return its type as a string
+typeOf: function(value) {
+    //return its type as a string if the type is not an object
+    if (typeof value !== 'object') {
+    return typeof value;
+    //if it is, see if it's an array, if so..
+    } else if (Array.isArray(value)) {
+        //return array
+        return 'array';
+        //if it's not an array either, see if it's null. If so...
+    } else if (value === null) {
+        //return null
+        return 'null';
+        //if it's not any of those
+    } else {
+        //it's an object. return object
+        return 'object';
+    }
+},
 
 /** _.first
 * Arguments:
@@ -78,7 +80,29 @@ var _ = {
 *   _.first(["a", "b", "c"], 1) -> "a"
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
+// have first take the arguments of an array and a number
+first: function(array, number) {
+    //If <array> is not an array, or *if the number is negative*, return []
+    if (!Array.isArray(array) || number < 0) {
+        //return []
+        return [];
+        //If <number> is not given or not a number, return just the first element in <array>.
+    } else if (typeof number !== 'number') {
+        //return the first element of the array
+        return array[0];
+        //*If the number is greater than the length of the array*
+    } else if (number > array.length) {
+        // return the array
+        return array;
+        //Otherwise, return the first <number> items of <array>
+    }    else {
+        //return the number of items from the array from the front
+        return array.slice(0, number );
 
+    }
+    
+    
+},
 
 /** _.last
 * Arguments:
@@ -97,7 +121,6 @@ var _ = {
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
 
 /** _.indexOf
 * Arguments:
@@ -226,7 +249,7 @@ var _ = {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-_map = function(collection, func) {
+//_map = function(collection, func) {
     //create a storage array
 
     //check if collection is an array. If it is...
@@ -238,7 +261,7 @@ _map = function(collection, func) {
     //push that set of values, whatever they may be, into the storage array
     
     //return the array
-}
+//}
 
 /** _.pluck
 * Arguments:
@@ -330,7 +353,7 @@ _map = function(collection, func) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
-
+};
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
