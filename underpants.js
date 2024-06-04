@@ -155,7 +155,17 @@ if (!Array.isArray(array) || number < 0) {
 *   _.indexOf(["a","b","c"], "c") -> 2
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
-
+indexOf: function (array, value) {
+    //iterate over array
+    for (let i = 0; i < array.length; i++) {
+        //check value against each index of the array. If they match...
+        if (array[i] === value) {
+            //return that index
+            return i;
+        }
+    }//if none of them match the value, return -1
+    return -1;
+}
 
 /** _.contains
 * Arguments:
