@@ -3,7 +3,25 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-var _ = {};
+var _ = {
+    identity: 
+    typeOf:
+    first:
+    last:
+    indexOf:
+    contains:
+    each:
+    unique:
+    filter:
+    reject:
+    partition:
+    map:
+    pluck:
+    every:
+    some:
+    reduce:
+    extend:
+};
 
 
 /**
@@ -208,7 +226,19 @@ var _ = {};
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
+_map = function(collection, func) {
+    //create a storage array
 
+    //check if collection is an array. If it is...
+
+    //have the function take in an element an an index#
+
+    //if not, have the function take in a value, and it's key
+
+    //push that set of values, whatever they may be, into the storage array
+    
+    //return the array
+}
 
 /** _.pluck
 * Arguments:
