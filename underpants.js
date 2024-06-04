@@ -121,7 +121,25 @@ first: function(array, number) {
 *   _.last(["a", "b", "c"], 1) -> "c"
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
-
+last : function(array, number) {
+//If <array> is not an array, or *if the number is negative*, return []
+if (!Array.isArray(array) || number < 0) {
+    //return []
+    return [];
+    //If <number> is not given or not a number, return just the first element in <array>.
+} else if (typeof number !== 'number') {
+    //return the last element of the array
+    return array[array.length - 1];
+    //*If the number is greater than the length of the array*
+} else if (number > array.length) {
+    // return the array
+    return array;
+    //Otherwise, return the last <number> items of <array>
+}    else {
+    //return the number of items from the array from the back
+    return array.slice(number - 1, array.length);
+}
+},
 /** _.indexOf
 * Arguments:
 *   1) An array
