@@ -165,7 +165,7 @@ indexOf: function (array, value) {
         }
     }//if none of them match the value, return -1
     return -1;
-}
+},
 
 /** _.contains
 * Arguments:
@@ -181,7 +181,9 @@ indexOf: function (array, value) {
 * Examples:
 *   _.contains([1,"two", 3.14], "two") -> true
 */
-
+contains: function (array, value) {
+    //
+}
 
 /** _.each
 * Arguments:
