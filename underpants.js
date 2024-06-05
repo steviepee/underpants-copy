@@ -262,7 +262,18 @@ unique: function (array) {
 *   use _.each in your implementation
 */
 filter: function(array, func) {
-    
+    //create output array
+    let output = [];
+//iterate over the array
+ for (let i = 0; i < array.length; i++) {
+// //pass each item through the function, if truthy...
+ if (func(array[i], i, array)){
+// //push into output array
+ output.push(array[i]);
+}
+ }
+    //return output array
+    return output;
 }
 
 /** _.reject
