@@ -184,7 +184,7 @@ indexOf: function (array, value) {
 contains: function (array, value) {
     //use a ternary to return true or false ^ array has the value
     return array.includes(value) ? true : false; 
-}
+},
 
 /** _.each
 * Arguments:
@@ -201,7 +201,21 @@ contains: function (array, value) {
 *   _.each(["a","b","c"], function(e,i,a){ console.log(e)});
 *      -> should log "a" "b" "c" to the console
 */
+each: function(collection, func) {
+    //if collection is an array, expose element to the function by[element, index, collection]
+    
+    if (Array.isArray(collection)) {
+        for (let i = 0; i < collection.length; i++) {
+             func(collection[i], i, collection);
+        }  
+        } else {
+            //if collection is an object, pass function through by value, key, collection
+            for (let key in collection) {  
+                func(collection[key], key, collection)
+        }
+    }
 
+},
 
 /** _.unique
 * Arguments:
