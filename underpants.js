@@ -349,7 +349,7 @@ partition: function (array, func) {
             //return output array
             return output;
 
-}
+},
 
 
 /** _.map
@@ -367,19 +367,22 @@ partition: function (array, func) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-//map: function(collection, func) {
+map: function(collection, func) {
     //create a storage array
-// let sto = [];
-    //check if collection is an array. If it is...
-
-    //have the function take in an element an an index#
-
-    //if not, have the function take in a value, and it's key
-
-    //push that set of values, whatever they may be, into the storage array
-    
-    //return the array
-//}
+let sto = [];
+//check if collection is an array. If it is...
+if (Array.isArray(collection)) {
+//have the function take in element, index#, collection. push the results into the storage array
+    for (let i = 0; i < collection.length; i++) {
+         sto.push(func(collection[i], i, collection));
+    }  //if not, have the function take in a value, and it's key. push the results into the storage array
+    } else {
+        for (let key in collection) {  
+            sto.push(func(collection[key], key, collection));
+    }
+}    //return the array
+    return sto;
+}
 
 /** _.pluck
 * Arguments:
