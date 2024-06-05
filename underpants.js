@@ -274,7 +274,7 @@ filter: function(array, func) {
  }
     //return output array
     return output;
-}
+},
 
 /** _.reject
 * Arguments:
@@ -288,7 +288,9 @@ filter: function(array, func) {
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
-
+reject: function (array, func) {
+    //
+}
 
 /** _.partition
 * Arguments:
@@ -325,9 +327,9 @@ filter: function(array, func) {
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
-//_map = function(collection, func) {
+//map: function(collection, func) {
     //create a storage array
-
+// let sto = [];
     //check if collection is an array. If it is...
 
     //have the function take in an element an an index#
