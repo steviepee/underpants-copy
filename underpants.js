@@ -382,7 +382,7 @@ if (Array.isArray(collection)) {
     }
 }    //return the array
     return sto;
-}
+},
 
 /** _.pluck
 * Arguments:
@@ -394,7 +394,9 @@ if (Array.isArray(collection)) {
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+pluck: function(array, prop) {
 
+},
 
 /** _.every
 * Arguments:
