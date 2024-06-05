@@ -429,7 +429,27 @@ pluck: function(array, prop) {
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 every: function (collection, func) {
-    if (Array.isArray(collection)) {
+//if func isn't a function and the collection is an array
+if (typeof func !== 'function' && Array.isArray(collection)) {
+// iterate over the array
+for (let i = 0; i < collection.length; i++) {
+    //if any values are falsey...
+    if (!collection[i]) {
+        //return false
+        return false;
+    }
+}
+//if func isn't a function and the collection is an object
+} else if (typeof func !== 'function' && !Array.isArray(collection)) {
+//iterate over the object
+for (let key in collecttion) {
+    //if any values are falsey
+    if (!collection[key]) {
+        //return false
+        return false;
+    }
+}
+} else if (Array.isArray(collection)) {
         for (let i = 0; i < collection.length; i++) {//if we get a falsey result...
              if (!func(collection[i], i, collection)) {
                 //return false
