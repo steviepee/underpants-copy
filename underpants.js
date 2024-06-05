@@ -301,7 +301,7 @@ reject: function (array, func) {
        }
           //return output array
           return output;
-}
+},
 
 /** _.partition
 * Arguments:
@@ -321,6 +321,35 @@ reject: function (array, func) {
 *   }); -> [[2,4],[1,3,5]]
 }
 */
+partition: function (array, func) {
+    //create two storage arrays
+    let sto = [];
+    let rage = []; 
+    //create output array
+     let output = [];
+     //iterate over the array
+      for (let i = 0; i < array.length; i++) {
+     // //pass each item through the function, if truthy...
+      if (func(array[i], i, array)){
+     // //push into output array
+      sto.push(array[i]);
+     }
+     
+      }
+       //iterate over the original array again
+       for (let x = 0; x < array.length; x++) {
+        // //pass each item through the function, if falsey...
+         if (!func(array[x], x, array)){
+        // //push into output array
+         rage.push(array[x]);
+        }
+         }//push the storage arrays into the output array
+         output.push(sto);
+         output.push(rage);
+            //return output array
+            return output;
+
+}
 
 
 /** _.map
