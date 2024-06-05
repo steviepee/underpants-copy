@@ -182,7 +182,8 @@ indexOf: function (array, value) {
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 contains: function (array, value) {
-    //
+    //use a ternary to return true or false ^ array has the value
+    return array.includes(value) ? true : false; 
 }
 
 /** _.each
