@@ -226,7 +226,25 @@ each: function(collection, func) {
 * Examples:
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
+unique: function (array) {
+    //create a storage array
+    let sto = [];
+    //if the index that resolves to any value of the array is the same as the one we're on, we should push that value to the new array
+    //iterate over the array
+    for (let a = 0; a < array.length; a++) {
+        //if the value is on the same index as the one from index of
+        if (_.indexOf(array, array[a]) === a) {
+            //push the value into the storage array
+            sto.push(array[a]);
+        }
 
+    }
+
+
+
+    //return storage array
+    return sto;
+}
 
 /** _.filter
 * Arguments:
