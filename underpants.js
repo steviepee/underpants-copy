@@ -395,7 +395,35 @@ if (Array.isArray(collection)) {
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
 pluck: function(array, prop) {
+    //create a storage array
+    let sto = [];
+    //iterate over the array
+    for (let a = 0; a < array.length; a++) {
+        //at each iterateion, use map 
+        _.map(array[a], function () {
+            for (let key in array) {
+                         sto.push(array[a][prop]);
+                     }
+                 })//return storage array
+                 //Remove current(and now, any) duplicates
+                 //return _.unique(sto);
+                 return sto
+        }
 
+    
+    
+
+
+
+
+
+        //at each iteration, add the property
+    //     for (let key in array) {
+    //         sto.push(array[a][prop]);
+    //     }
+    // }//return storage array
+    // //Remove current(and now, any) duplicates
+    // return _.unique(sto);
 },
 
 /** _.every
