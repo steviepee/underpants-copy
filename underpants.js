@@ -244,7 +244,7 @@ unique: function (array) {
 
     //return storage array
     return sto;
-}
+},
 
 /** _.filter
 * Arguments:
@@ -261,7 +261,9 @@ unique: function (array) {
 * Extra Credit:
 *   use _.each in your implementation
 */
-
+filter: function(array, func) {
+    
+}
 
 /** _.reject
 * Arguments:
