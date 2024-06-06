@@ -563,13 +563,15 @@ output = func(output, array[i], i);
     }
     return output;
 } else {//if there is a seed
+    //then output is equal to the seed
+    output = seed;
 //iterate over the array
-for (let i = 0; i , array.length; i++) {
+for (let i = 0; i < array.length; i++) {
     //call the function at each iteration
     output = func(output, array[i], i);
+}
 }//return the output
 return output;
-}
 },
 /** _.extend
 * Arguments:
