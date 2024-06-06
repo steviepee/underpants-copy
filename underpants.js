@@ -491,7 +491,46 @@ for (let key in collecttion) {
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+some: (collection, func) => {
+    //if func is not a function and collection is an array
+    if (typeof func !== 'function' && Array.isArray(collection)) {
+        //iterate over the array
+        for (let i = 0; i < collection.length; i++) {
+            //if anything returns truthy...
+            if (collection[i]) {
+                //return true
+                return true;
+            }
+        }//if func is not a function and collection is an object
+    } else if (typeof func === 'object' && func !== null) {
+        //iterate over the object
+        for (let key in collection) {
+            //if any values are truthy
+            if (collection[key]) {
+                //return true;
+            }
+        } 
+    //if func is a function, use _each on the collection
+     } else if (Array.isArray(collection)) {
+    for (let i = 0; i < collection.length; i++) {//if we get a falsey result...
+         if (func(collection[i], i, collection)) {
+            //return true
+            return true;
+         } 
+       
+    }  
+    } else {
+        //if collection is an object, pass function through by value, key, collection
+        for (let key in collection) {  //if we get a falsey value...
+           if (func(collection[key], key, collection)) {
+            //return true
+            return true;
+           }
+    }
 
+}//if all tests fail, return false
+return false;
+},
 
 /** _.reduce
 * Arguments:
@@ -511,7 +550,9 @@ for (let key in collecttion) {
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+reduce: (array, func, seed) => {
 
+},
 
 /** _.extend
 * Arguments:
@@ -527,6 +568,9 @@ for (let key in collecttion) {
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+extend: (obj) => {
+
+}
 };
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
