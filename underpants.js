@@ -551,9 +551,26 @@ return false;
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 reduce: (array, func, seed) => {
-
+   //create an output variable
+   let output;
+    //if seed is not given, use the first element of array
+    if (!seed) {
+        output = array[0];   
+    //iterate through array 
+    for (let i = 1; i < array.length; i++) {
+        //call the function at each iteration
+output = func(output, array[i], i);
+    }
+    return output;
+} else {//if there is a seed
+//iterate over the array
+for (let i = 0; i , array.length; i++) {
+    //call the function at each iteration
+    output = func(output, array[i], i);
+}//return the output
+return output;
+}
 },
-
 /** _.extend
 * Arguments:
 *   1) An Object
