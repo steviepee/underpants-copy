@@ -554,7 +554,7 @@ reduce: (array, func, seed) => {
    //create an output variable
    let output;
     //if seed is not given, use the first element of array
-    if (!seed) {
+    if (!seed || seed === NaN) {
         output = array[0];   
     //iterate through array 
     for (let i = 1; i < array.length; i++) {
