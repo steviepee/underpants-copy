@@ -586,8 +586,9 @@ return output;
 *   var data = {a:"one"};
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
-*/
-extend: (obj) => {
+*///set extend to take two objects +potinf(plus potential infinity)
+extend: (object1, object2, ...objects) => {
+ return Object.assign(object1, object2, ... objects);
 
 }
 };
