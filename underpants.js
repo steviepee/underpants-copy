@@ -589,16 +589,14 @@ return output;
 *///set extend to take two objects +potinf(plus potential infinity)
 extend: (object1, object2, ...objects) => {
     //move all of the subsequent arrays' properties and values to the first array
- return Object.assign(object1, object2, ... objects);
+// return Object.assign(object1, object2, ... objects);
 //iterate over the object
-// for (let key in object1) {
-//     //set up a function that gives object1 all the info held by object 2
-//     for (let key in object2) {
-//         object1.key += object2.key;
-//         object1[key] += object2[key];
-//         return object1;
-  //  }
-//}
+ for (let key in object2) {
+     //set up a function that gives object1 all the info held by object 2
+     object1.object2.key = object2[key]
+         return object1;
+    }
+
 }
 };
 //////////////////////////////////////////////////////////////////////
