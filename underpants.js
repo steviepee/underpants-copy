@@ -588,6 +588,7 @@ return output;
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 *///set extend to take two objects +potinf(plus potential infinity)
 extend: (object1, object2, ...objects) => {
+    //move all of the subsequent arrays' properties and values to the first array
  return Object.assign(object1, object2, ... objects);
 //iterate over the object
 // for (let key in object1) {
@@ -596,8 +597,8 @@ extend: (object1, object2, ...objects) => {
 //         object1.key += object2.key;
 //         object1[key] += object2[key];
 //         return object1;
-    }
-}
+  //  }
+//}
 }
 };
 //////////////////////////////////////////////////////////////////////
